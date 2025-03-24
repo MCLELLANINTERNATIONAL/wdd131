@@ -32,48 +32,104 @@ header {
 
 header h1 {
     font-size: 2rem;
+    text-align: center;
     margin: 0;
 }
 
 /* Navigation Styles */
-.nav {
-    list-style: none;
-    background-color: #1bb4c8; /* Consistent color */
-    padding: 1rem;
-    border-radius: 0px;
-    margin: 1rem -1rem -1rem -1rem;
-}
-
-.nav ul {
-    flex-direction: column;
-    display: flex;  
-    justify-content: center;
-    list-style: none; 
+.nav-section {
+    margin: 0;
     padding: 0;
+    gap: 3px;
 }
 
-.nav ul li {
-    margin: 0.3rem 0;
+.nav-section {
+    background-color: navy;
+    /* Adjust color to match */
 }
 
-.nav ul li a {
-    font-weight: bold;
-    font-size: 20px;
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 0;
+    background: none;
+    color: white;
+    position: absolute;
+    text-align: left;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+.header-nav {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: navy;
+    padding: 10px 0;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    padding: 15px 20px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.navigation li {
+    display: none;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
+    background-color: transparent;
     color: white;
     text-decoration: none;
-    list-style: none;
-    transition: text-decoration 0.3s ease;
+    font-weight: 700;
+    transition: color 0.5s ease-in-out;
+    font-size: clamp(1.2rem, 2vmin, 1.2rem);
+    margin-left: 4rem;
 }
 
-.nav ul li a:hover {
-    text-decoration: underline;
+.navigation a.active {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
 }
+
+.navigation a:hover {
+    color: #3BFF38;
+    background-color: gray;
+}
+
+.navigation.show {
+    display: flex;
+    /* Ensure it shows as a flexbox */
+    flex-direction: column;
+    /* Keep stacked layout */
+    align-items: center;
+}
+
+.navigation.show li {
+    display: block;
+}
+
+#menu.show::before {
+    content: "❎ ";
+}   
 
 /* Main Content Styling */
 main {
     margin: 0 auto;
     padding: 1rem;
-    max-width: 600px;
+    max-width: 1500px;
     align-content: center;
     box-sizing: border-box;
 }
@@ -125,70 +181,4 @@ footer {
 
 #lastModified {
     color: black;
-}
-
-/* Hamburger Menu (for small screens) */
-.hamburger {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Mobile Menu Styles */
-.nav {
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: none;
-}
-
-.nav.show {
-    display: flex;
-}
-
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav li{
-    margin: 0 10px;
-}
-
-.nav li a {
-    display: block;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    color: #fff;
-    background: #ddd;
-    border-radius: 4px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.nav li a:hover {
-    background: #004d8d;
-    color: white;
-}
-
-/* Media Query for Larger Screens */
-@media (min-width: 768px) {
-    header {
-        padding: 20px;
-    }
-
-    main {
-        max-width: 800px;
-    }
-
-    .temple-gallery {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
 }

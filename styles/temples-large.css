@@ -2,7 +2,6 @@
 @media (min-width: 768px) {
     /* Header Styles for large screens */
     header {
-        text-align: left;
         background-color: #84dce8;
         display: flex;
         justify-content: space-between; /* Space between h1 and nav */
@@ -10,53 +9,37 @@
     }
 
     header h1 {
-        order: 2;
-        color: #004d8d;
-        font-size: 2.5rem;
+        text-align: left;
+        order: 1;
         margin: 0;
     }
 
     /* Navigation Menu for large screens */
-    
-    .nav {
-        order: 1;
-        display: flex; /* Horizontal layout */
-        flex-direction: row;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav ul {
-        list-style: none;
-        flex-direction: row;
-        display: flex;  
-        justify-content: center;
-        padding: 0;
-        margin: 0;
+    .navigation {
+        display: flex;
+        order: 2;
     }
     
-    .nav ul li {
-        margin: 0 10px; /* Add spacing between nav items */
+    .navigation li {
+        display: block; /* change state in small view */
+        flex: 1 1 100%;
+    }
+    
+    .navigation a {
+        text-align: right;
+    }
+    
+    .navigation.show {
+        flex-direction: row; /* Keep stacked layout */
+    }
+    
+    #menu {
+        display: none; /* hide hamburger button */
     }
 
-    .nav ul li a {
-        padding: 15px 30px;
-        font-size: 1.2rem;
-        color: royalblue;
-        background: white;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .nav ul li a:hover {
-        background: #004d8d;
-        color: white;
-    }
 
     /* Hide the hamburger icon on large screens */
-    .hamburger {
+    .hambutton {
         display: none;
     }
 
@@ -65,7 +48,6 @@
         max-width: 1200px;
         margin: 3rem auto;
         padding: 2rem;
-        background: #f8f9fa;
         border-radius: 10px;
     }
 
@@ -74,13 +56,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        width: 100%;
+        height: auto;
     }
 
     figure {
         margin: 0;
         border: 1px solid #ccc;
         padding: 1rem;
-        background: #fff;
         border-radius: 8px;
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
@@ -105,12 +88,9 @@
 
     /* Footer */
     footer {
-        text-align: center;
         font-size: 18px;
         font-weight: bold;
         padding: 1rem;
-        background-color: #84dce8;
-        color: royalblue;
     }
 
     #lastModified {

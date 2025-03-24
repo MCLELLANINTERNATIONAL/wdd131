@@ -16,23 +16,25 @@
     <!-- CSS file for larger screens will be loaded dynamically -->
     <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 768px)">
     <script src="scripts/getdates.js" defer></script>
-    <script src="scripts/temples.js" defer></script> 
+    <script src="scripts/hambutton.js" defer></script>
     <script src="scripts/filtered-temples.js" defer></script>
 </head>
 
 <body>
     <header>
         <h1>Temple Album</h1>
-        <a id="menu" href="#"></a>
-        <nav>
-            <ul class="navigation">
-                <li><a href="#" data-action="home">Home</a></li>
-                <li><a href="#" data-action="old">Old</a></li>
-                <li><a href="#" data-action="new">New</a></li>
-                <li><a href="#" data-action="large">Large</a></li>
-                <li><a href="#" data-action="small">Small</a></li>
-            </ul>
-        </nav>
+        <div class="nav-section">     
+            <button type="button" id="menu"></button>
+                <nav class="header-nav">
+                    <ul class="navigation">
+                        <li><a href="#" data-action="home">Home</a></li>
+                        <li><a href="#" data-action="old">Old</a></li>
+                        <li><a href="#" data-action="new">New</a></li>
+                        <li><a href="#" data-action="large">Large</a></li>
+                        <li><a href="#" data-action="small">Small</a></li>
+                    </ul>
+                </nav>
+            </div>    
     </header>
     <main>
         <h2>Home</h2>
